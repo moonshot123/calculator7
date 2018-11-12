@@ -1,4 +1,7 @@
 import React from 'react'
+import isNumber from './isNumber'
+import operation from './operation'
+
 
 const Calculate = (state,name) => {
     console.log("계산값확인 total :"+state.total);
@@ -7,17 +10,13 @@ const Calculate = (state,name) => {
     console.log("입력값확인 name: "+name)
     
     
-    //0. 부호인지 확인 (=,-,*,/,C,=)
-    //1. 숫자확인 및 변환
-    //2. 첫번째, 두번째 숫자인지 확인 
+    //0. 부호인지 확인 (=,-,*,/,C,=)    :    
+    //1. 숫자확인 및 변환               : isNumber 
+    //2. 첫번째, 두번째 숫자인지 확인    : opratio 
     //3. 나눌때 앞자리가 0인지? 
 
     
-    //첫번째, 두번째 숫자인지 확인
-    if( (next === null) && isNumber(next) ){
-        next = name;
-    }
-    else{}
+    
 
 
     //부호확인
@@ -39,15 +38,14 @@ const Calculate = (state,name) => {
     } else if ( name === "=" ) {
         
     } else {
-        //숫자일때
-
-        if(){
-            //첫번째 숫자일때
-
-        }else{
-            //두번째 숫자일떄
+       
+        //첫번째, 두번째 숫자인지 확인
+        if( (next === null) && isNumber(next) ){
+            next = name;
         }
+        else{}
 
+        
 
     }
     

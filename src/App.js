@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import CalculatorInput from './components/CalculatorInput'
 import Calculate from '../src/logic/Calculate'
+import CalculatorOutput from './CalculatorOutput'
+
 
 class App extends Component {
   state = {
@@ -18,17 +20,16 @@ class App extends Component {
       Calculate( this.state, name )
     )
   }
-
+  
   render() {
-
+    const total = {
+      
+    }
 
     return (
     <div>
-        <div>
-            
-
-               
-
+        <div>            
+          <CalculatorOutput total={this.total}/>             
           <CalculatorInput clickhadler={this.handleBtnClick}/>            
         </div>
     </div>
