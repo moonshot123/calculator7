@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CalculatorInput from './components/CalculatorInput'
+import Calculate from '../src/logic/Calculate'
 
 class App extends Component {
+  state = {
+    
+    total: null,    //계산값
+    next: null,     //두번째값
+    operation: null,//부호
+    
+  }
+  
+  handleBtnClick = (name) => {
+    console.log(" APP에서 name : "+name)
+    this.setState(
+      Calculate( this.state, name )
+    )
+  }
+
   render() {
+
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+    <div>
+        <div>
+            
+
+               
+
+          <CalculatorInput clickhadler={this.handleBtnClick}/>            
+        </div>
+    </div>
     );
   }
 }
