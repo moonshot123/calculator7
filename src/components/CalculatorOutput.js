@@ -2,17 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-const CalculatorOutput = () => {
+const CalculatorOutput = ({total}) => {
 
-    
+    console.log("출력부 로그 : "+total)
     return(
+       
         <div>
-            출력부
+            {total}
         </div>
                 
     )
-
-    
 
 }
 

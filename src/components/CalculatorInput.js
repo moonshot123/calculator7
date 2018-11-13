@@ -40,12 +40,6 @@ class CalculatorInput extends Component{
                 <CalculatorButton name="/" clickhadler={this.handleBtnClick}/>
                 </div>
 
-
-
-
-
-
-
             </div>
 
 
