@@ -1,6 +1,6 @@
 import React from 'react'
 import isNumber from './isNumber'
-import operation from './operation'
+import operation from './operagtion'
 
 
 const Calculate = (state,name) => {
@@ -16,51 +16,68 @@ const Calculate = (state,name) => {
     //3. 나눌때 앞자리가 0인지? 
 
     
-    
-
-
-    //부호확인
-    if( name === "+" ){
-        total = name + next
-        console.log("더하기"+total) 
-    } else if ( name === "-" ) {
-        total = name + next
-    } else if ( name === "*" ) {
-        
-    } else if ( name === "/" ) {
-        
-    } else if ( name === "C" ) {
+    //clear
+    if ( name === "C" ) {
         return {
             total: null,
             next: null,
-            operation: null,
+            operation: null
           };
-    } else if ( name === "=" ) {
-        
-    } else {
-       
-        //첫번째, 두번째 숫자인지 확인
-        if( (next === null) && isNumber(next) ){
-            next = name;
-        }
-        else{}
+    }
 
-        
+
+    //부호확인
+    if( name === "+" || name === "-" || name === "*" || name === "/" ){
+        state.operation = name;
+        console.log(operation);
+
+        return {          
+            operation: state.operation
+          };
 
     }
     
-
-    //
-
+    //숫자입력 >> 첫번째 , 두번째
 
 
-    
+    //입력값이 숫자인지 확인 숫자면 operation으로 보냄
+    if( isNumber(name) ){
+       console.log("name 숫자확인");
+
+       operation(state,name)
+        
+
+    }
+
+
+
+    //계산 로직완
+    if(name === "=" ){
+        if(operation === "+"){
+            total = total + next
+        }
+        if(operation === "-"){
+            total = total - next
+        }
+        if(operation === "*"){
+            total = total * next
+        }
+        if(operation === "/"){
+            //앞자리0
+            if(total !== "0"){
+                total = next / total
+            }else{
+                total="0은 안됨"
+            }
+        }
+    }
     
     
     return(
         <div>
-        계산부분
-        
+            {total} 
+            {next} 
+            {operation}    
 
         </div>
 

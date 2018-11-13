@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import CalculatorInput from './components/CalculatorInput'
 import Calculate from '../src/logic/Calculate'
-import CalculatorOutput from './CalculatorOutput'
-
+import CalculatorOutput from './components/CalculatorOutput'
+import  './logic/operagtion'
 
 class App extends Component {
   state = {
@@ -22,9 +22,9 @@ class App extends Component {
   }
   
   render() {
-    const total = {
-      
-    }
+     
+   
+
 
     return (
     <div>
