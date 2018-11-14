@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import PropTypes from "prop-types";
-
+import './CalculatorButton.css';
 
 class CalculatorButton extends Component {
 
@@ -10,8 +10,8 @@ class CalculatorButton extends Component {
 
     render(){
         return(
-            <div>
-                <button onClick={this.handleClick} >{this.props.name}</button>
+            <div className="container">
+                <button className="btn" onClick={this.handleClick} >{this.props.name}</button>
             </div>
         )
     }  
